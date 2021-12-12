@@ -1,0 +1,93 @@
+C:\Users\minhc\Desktop\CameraTester\bin\Debug\ZedGraph.dll
+C:\Users\minhc\Desktop\CameraTester\bin\Debug\Emgu.CV.UI.xml
+C:\Users\minhc\Desktop\CameraTester\bin\Debug\Emgu.CV.World.xml
+C:\Users\minhc\Desktop\CameraTester\bin\Debug\ZedGraph.xml
+C:\Users\minhc\Desktop\CameraTester\bin\Debug\zh-CN\ZedGraph.resources.dll
+C:\Users\minhc\Desktop\CameraTester\obj\Debug\CameraTester.csprojResolveAssemblyReference.cache
+C:\Users\minhc\Desktop\CameraTester\obj\Debug\CameraTester.csproj.GenerateResource.Cache
+C:\Users\minhc\Desktop\CameraTester\bin\Debug\Emgu.CV.UI.dll
+C:\Users\minhc\Desktop\CameraTester\bin\Debug\Emgu.CV.World.dll
+C:\Users\minhc\Desktop\CameraTester\bin\Debug\x64\concrt140.dll
+C:\Users\minhc\Desktop\CameraTester\bin\Debug\x64\cvextern.dll
+C:\Users\minhc\Desktop\CameraTester\bin\Debug\x64\msvcp140.dll
+C:\Users\minhc\Desktop\CameraTester\bin\Debug\x64\opencv_ffmpeg320_64.dll
+C:\Users\minhc\Desktop\CameraTester\bin\Debug\x64\vcruntime140.dll
+C:\Users\minhc\Desktop\CameraTester\bin\Debug\x86\concrt140.dll
+C:\Users\minhc\Desktop\CameraTester\bin\Debug\x86\cvextern.dll
+C:\Users\minhc\Desktop\CameraTester\bin\Debug\x86\msvcp140.dll
+C:\Users\minhc\Desktop\CameraTester\bin\Debug\x86\opencv_ffmpeg320.dll
+C:\Users\minhc\Desktop\CameraTester\bin\Debug\x86\vcruntime140.dll
+C:\Users\minhc\Desktop\CameraTester\bin\Debug\sample.png
+C:\Users\minhc\Desktop\CameraTester\bin\Debug\sample_in_scene.png
+C:\Users\minhc\Desktop\CameraTester\obj\Debug\CameraTester.MainForm.resources
+C:\Users\minhc\Desktop\CameraTester\obj\Debug\CameraTester.ProcessForm.resources
+C:\Users\minhc\Desktop\CameraTester\bin\Debug\CameraTester.exe.config
+C:\Users\minhc\Desktop\CameraTester\obj\Debug\CameraTester.Properties.Resources.resources
+C:\Users\minhc\Desktop\CameraTester\bin\Debug\CameraTester.exe
+C:\Users\minhc\Desktop\CameraTester\bin\Debug\CameraTester.pdb
+C:\Users\minhc\Desktop\CameraTester\obj\Debug\CameraTester.exe
+C:\Users\minhc\Desktop\CameraTester\obj\Debug\CameraTester.pdb
+C:\Users\minhc\Desktop\CameraTester\bin\Debug\sample_capture.jpg
+C:\Users\minhc\Desktop\New folder (2)\CameraTester\bin\Debug\CameraTester.exe.config
+C:\Users\minhc\Desktop\New folder (2)\CameraTester\obj\Debug\CameraTester.exe
+C:\Users\minhc\Desktop\New folder (2)\CameraTester\obj\Debug\CameraTester.pdb
+C:\Users\minhc\Desktop\New folder (2)\CameraTester\bin\Debug\sample.png
+C:\Users\minhc\Desktop\New folder (2)\CameraTester\bin\Debug\sample_capture.jpg
+C:\Users\minhc\Desktop\New folder (2)\CameraTester\bin\Debug\sample_in_scene.png
+C:\Users\minhc\Desktop\New folder (2)\CameraTester\bin\Debug\x64\concrt140.dll
+C:\Users\minhc\Desktop\New folder (2)\CameraTester\bin\Debug\x64\cvextern.dll
+C:\Users\minhc\Desktop\New folder (2)\CameraTester\bin\Debug\x64\msvcp140.dll
+C:\Users\minhc\Desktop\New folder (2)\CameraTester\bin\Debug\x64\opencv_ffmpeg320_64.dll
+C:\Users\minhc\Desktop\New folder (2)\CameraTester\bin\Debug\x64\vcruntime140.dll
+C:\Users\minhc\Desktop\New folder (2)\CameraTester\bin\Debug\x86\concrt140.dll
+C:\Users\minhc\Desktop\New folder (2)\CameraTester\bin\Debug\x86\cvextern.dll
+C:\Users\minhc\Desktop\New folder (2)\CameraTester\bin\Debug\x86\msvcp140.dll
+C:\Users\minhc\Desktop\New folder (2)\CameraTester\bin\Debug\x86\opencv_ffmpeg320.dll
+C:\Users\minhc\Desktop\New folder (2)\CameraTester\bin\Debug\x86\vcruntime140.dll
+C:\Users\minhc\Desktop\New folder (2)\CameraTester\bin\Debug\CameraTester.exe
+C:\Users\minhc\Desktop\New folder (2)\CameraTester\bin\Debug\CameraTester.pdb
+C:\Users\minhc\Desktop\New folder (2)\CameraTester\bin\Debug\Emgu.CV.UI.xml
+C:\Users\minhc\Desktop\New folder (2)\CameraTester\bin\Debug\Emgu.CV.World.xml
+C:\Users\minhc\Desktop\New folder (2)\CameraTester\bin\Debug\ZedGraph.xml
+C:\Users\minhc\Desktop\New folder (2)\CameraTester\bin\Debug\zh-CN\ZedGraph.resources.dll
+C:\Users\minhc\Desktop\New folder (2)\CameraTester\obj\Debug\CameraTester.csprojResolveAssemblyReference.cache
+C:\Users\minhc\Desktop\New folder (2)\CameraTester\obj\Debug\CameraTester.MainForm.resources
+C:\Users\minhc\Desktop\New folder (2)\CameraTester\obj\Debug\CameraTester.ProcessForm.resources
+C:\Users\minhc\Desktop\New folder (2)\CameraTester\obj\Debug\CameraTester.Properties.Resources.resources
+C:\Users\minhc\Desktop\New folder (2)\CameraTester\obj\Debug\CameraTester.csproj.GenerateResource.Cache
+C:\Users\minhc\Desktop\CameraTester\CameraTester\bin\Debug\sampleinput_stm8.jpg
+C:\Users\minhc\Desktop\CameraTester\CameraTester\bin\Debug\sample_pinout.jpg
+C:\Users\minhc\Desktop\CameraTester\CameraTester\bin\Debug\sample_stm8.jpg
+C:\Users\minhc\Desktop\CameraTester\CameraTester\bin\Debug\sample_submat.png
+C:\Users\minhc\Desktop\CameraTester\CameraTester\bin\Debug\sample_text.jpg
+C:\Users\minhc\Desktop\CameraTester\CameraTester\bin\Debug\uncrop.jpg
+C:\Users\minhc\Desktop\CameraTester\CameraTester\bin\Debug\x64\concrt140.dll
+C:\Users\minhc\Desktop\CameraTester\CameraTester\bin\Debug\x64\cvextern.dll
+C:\Users\minhc\Desktop\CameraTester\CameraTester\bin\Debug\x64\msvcp140.dll
+C:\Users\minhc\Desktop\CameraTester\CameraTester\bin\Debug\x64\opencv_ffmpeg320_64.dll
+C:\Users\minhc\Desktop\CameraTester\CameraTester\bin\Debug\x64\vcruntime140.dll
+C:\Users\minhc\Desktop\CameraTester\CameraTester\bin\Debug\x86\concrt140.dll
+C:\Users\minhc\Desktop\CameraTester\CameraTester\bin\Debug\x86\cvextern.dll
+C:\Users\minhc\Desktop\CameraTester\CameraTester\bin\Debug\x86\msvcp140.dll
+C:\Users\minhc\Desktop\CameraTester\CameraTester\bin\Debug\x86\opencv_ffmpeg320.dll
+C:\Users\minhc\Desktop\CameraTester\CameraTester\bin\Debug\x86\vcruntime140.dll
+C:\Users\minhc\Desktop\CameraTester\CameraTester\bin\Debug\DirectShowLib-2005.dll
+C:\Users\minhc\Desktop\CameraTester\CameraTester\bin\Debug\Emgu.CV.UI.dll
+C:\Users\minhc\Desktop\CameraTester\CameraTester\bin\Debug\Emgu.CV.World.dll
+C:\Users\minhc\Desktop\CameraTester\CameraTester\bin\Debug\XnaFan.ImageComparison.dll
+C:\Users\minhc\Desktop\CameraTester\CameraTester\bin\Debug\ZedGraph.dll
+C:\Users\minhc\Desktop\CameraTester\CameraTester\bin\Debug\Emgu.CV.UI.xml
+C:\Users\minhc\Desktop\CameraTester\CameraTester\bin\Debug\Emgu.CV.World.xml
+C:\Users\minhc\Desktop\CameraTester\CameraTester\bin\Debug\ZedGraph.xml
+C:\Users\minhc\Desktop\CameraTester\CameraTester\bin\Debug\zh-CN\ZedGraph.resources.dll
+C:\Users\minhc\Desktop\CameraTester\CameraTester\obj\Debug\CameraTester.csprojResolveAssemblyReference.cache
+C:\Users\minhc\Desktop\CameraTester\CameraTester\obj\Debug\CameraTester.csproj.ResolveComReference.cache
+C:\Users\minhc\Desktop\CameraTester\CameraTester\obj\Debug\CameraTester.MainForm.resources
+C:\Users\minhc\Desktop\CameraTester\CameraTester\obj\Debug\CameraTester.Properties.Resources.resources
+C:\Users\minhc\Desktop\CameraTester\CameraTester\obj\Debug\CameraTester.csproj.GenerateResource.Cache
+C:\Users\minhc\Desktop\CameraTester\CameraTester\obj\Debug\CameraTester.exe
+C:\Users\minhc\Desktop\CameraTester\CameraTester\obj\Debug\CameraTester.pdb
+C:\Users\minhc\Desktop\CameraTester\CameraTester\bin\Debug\CameraTester.exe.config
+C:\Users\minhc\Desktop\CameraTester\CameraTester\bin\Debug\CameraTester.exe
+C:\Users\minhc\Desktop\CameraTester\CameraTester\bin\Debug\CameraTester.pdb
+C:\Users\minhc\Desktop\CameraTester\CameraTester\bin\Debug\sample.jpg

@@ -1,0 +1,23 @@
+[PROJECT]
+Target=controller.hex
+Processor_Text=PIC16F887
+CCSVerions=5.015
+Compiler=PCM
+CCSVersion=5.015
+[Target Data]
+FileList=controller.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\
+[C:\Users\minhc\Desktop\AOI_Controller\controller]
+Type=4
+[mru-list]
+1=controller.c
+[Opened Files]
+1=controller.c
+2=controller.h
+3=
+[controller.c]
+Type=4
+[Units]
+Count=1
+1=controller (main)

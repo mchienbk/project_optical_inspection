@@ -1,0 +1,56 @@
+
+ROM used:   650/8192 (8%)
+            650/8192 (8%) including unused fragments
+
+            0.6 Average locations per line
+            5.6 Average locations per statement
+
+RAM used:   27/368 (7%) at main() level
+            30/368 (8%) worst case
+
+Stack used: 1 worst case (1 in main + 0 for interrupts)
+Stack size: 8
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  312   116 100  controller.c
+  768     0   0  ..\..\..\..\Program Files (x86)\PICC\Devices\16F887.h
+----- -----
+ 1080   116 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     20   3    1             @delay_ms1
+0    348  54    7  3353  9.4  main
+0     12   2    0             @const646
+0     88  14    4             @PSTRINGC7_9600_62_63
+0      9   1    0             @const650
+0      9   1    0             @const651
+0     44   7    4   252  3.8  constspeed_X
+0     44   7    4   252  3.8  constspeed_Y
+0     36   6    2   193  2.3  goHome_X
+0     36   6    2   193  2.3  goHome_Y
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               5
+    Statements              116
+    Comments                239
+    Volume (V)              5173
+    Difficulty (D)          21.4
+    Effort to implement (E) 110642
+    Time to implement (T)   1 hours, 42 minutes
+    Est Delivered Bugs (B)  1
+    Cyclomatic Complexity   16
+    Maintainability (MI)    35
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00003     4  0  
+00004-007FF   646  1398  
+00800-00FFF     0  2048  
+01000-017FF     0  2048  
+01800-01FFF     0  2048  
+
+
+

@@ -1,0 +1,994 @@
+CCS PCM C Compiler, Version 5.015, 5967               30-Dec-17 14:05
+
+               Filename:   C:\Users\minhc\Desktop\AOI_Controller\controller.lst
+
+               ROM used:   650 words (8%)
+                           Largest free fragment is 2048
+               RAM used:   27 (7%) at main() level
+                           30 (8%) worst case
+               Stack used: 1 locations
+               Stack size: 8
+
+*
+0000:  MOVLW  01
+0001:  MOVWF  0A
+0002:  GOTO   12E
+0003:  NOP
+.................... #include <16F887.h> 
+.................... //////////// Standard Header file for the PIC16F887 device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2013 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC16F887 
+0004:  DATA CD,20
+0005:  DATA 43,24
+0006:  DATA 49,27
+0007:  DATA C5,2F
+0008:  DATA D4,22
+0009:  DATA 53,2A
+000A:  DATA 45,29
+000B:  DATA 5F,2B
+000C:  DATA 31,17
+000D:  DATA 30,10
+000E:  DATA 0D,05
+000F:  DATA 00,00
+0010:  DATA C1,2A
+0011:  DATA D4,27
+0012:  DATA DF,24
+0013:  DATA CE,29
+0014:  DATA D0,22
+0015:  DATA 43,2A
+0016:  DATA C9,27
+0017:  DATA CE,06
+0018:  DATA 0A,00
+0019:  DATA 53,2A
+001A:  DATA 4F,28
+001B:  DATA DF,24
+001C:  DATA CE,29
+001D:  DATA D0,22
+001E:  DATA 43,2A
+001F:  DATA C9,27
+0020:  DATA CE,06
+0021:  DATA 0A,00
+0022:  MOVF   0B,W
+0023:  MOVWF  35
+0024:  BCF    0B.7
+0025:  BSF    03.5
+0026:  BSF    03.6
+0027:  BSF    0C.7
+0028:  BSF    0C.0
+0029:  NOP
+002A:  NOP
+002B:  BCF    03.5
+002C:  BCF    03.6
+002D:  BTFSC  35.7
+002E:  BSF    0B.7
+002F:  BSF    03.6
+0030:  MOVF   0C,W
+0031:  ANDLW  7F
+0032:  BTFSC  03.2
+0033:  GOTO   078
+0034:  BCF    03.6
+0035:  MOVWF  35
+0036:  BSF    03.6
+0037:  MOVF   0D,W
+0038:  BCF    03.6
+0039:  MOVWF  36
+003A:  BSF    03.6
+003B:  MOVF   0F,W
+003C:  BCF    03.6
+003D:  MOVWF  37
+003E:  MOVF   35,W
+003F:  BTFSS  0C.4
+0040:  GOTO   03F
+0041:  MOVWF  19
+0042:  MOVF   36,W
+0043:  BSF    03.6
+0044:  MOVWF  0D
+0045:  BCF    03.6
+0046:  MOVF   37,W
+0047:  BSF    03.6
+0048:  MOVWF  0F
+0049:  BCF    03.6
+004A:  MOVF   0B,W
+004B:  MOVWF  38
+004C:  BCF    0B.7
+004D:  BSF    03.5
+004E:  BSF    03.6
+004F:  BSF    0C.7
+0050:  BSF    0C.0
+0051:  NOP
+0052:  NOP
+0053:  BCF    03.5
+0054:  BCF    03.6
+0055:  BTFSC  38.7
+0056:  BSF    0B.7
+0057:  BSF    03.6
+0058:  RLF    0C,W
+0059:  RLF    0E,W
+005A:  ANDLW  7F
+005B:  BTFSC  03.2
+005C:  GOTO   078
+005D:  BCF    03.6
+005E:  MOVWF  35
+005F:  BSF    03.6
+0060:  MOVF   0D,W
+0061:  BCF    03.6
+0062:  MOVWF  36
+0063:  BSF    03.6
+0064:  MOVF   0F,W
+0065:  BCF    03.6
+0066:  MOVWF  37
+0067:  MOVF   35,W
+0068:  BTFSS  0C.4
+0069:  GOTO   068
+006A:  MOVWF  19
+006B:  MOVF   36,W
+006C:  BSF    03.6
+006D:  MOVWF  0D
+006E:  BCF    03.6
+006F:  MOVF   37,W
+0070:  BSF    03.6
+0071:  MOVWF  0F
+0072:  INCF   0D,F
+0073:  BTFSC  03.2
+0074:  INCF   0F,F
+0075:  BCF    03.6
+0076:  GOTO   022
+0077:  BSF    03.6
+0078:  BCF    03.6
+0079:  RETURN
+....................  
+.................... #list 
+....................  
+.................... #device ADC=10 
+....................  
+.................... #FUSES NOWDT                    //No Watch Dog Timer 
+.................... //#FUSES WDT128                   //Watch Dog Timer uses 1:128 Postscale 
+.................... #FUSES NOBROWNOUT               //No brownout reset 
+.................... #FUSES NOLVP                    //No low voltage prgming, B3(PIC16) or B5(PIC18) used for I/O 
+.................... //#FUSES NOXINST                  //Extended set extension and Indexed Addressing mode disabled (Legacy mode) 
+....................  
+.................... #use delay(crystal=20000000) 
+007A:  MOVLW  35
+007B:  MOVWF  04
+007C:  BCF    03.7
+007D:  MOVF   00,W
+007E:  BTFSC  03.2
+007F:  GOTO   08D
+0080:  MOVLW  06
+0081:  MOVWF  78
+0082:  CLRF   77
+0083:  DECFSZ 77,F
+0084:  GOTO   083
+0085:  DECFSZ 78,F
+0086:  GOTO   082
+0087:  MOVLW  7B
+0088:  MOVWF  77
+0089:  DECFSZ 77,F
+008A:  GOTO   089
+008B:  DECFSZ 00,F
+008C:  GOTO   080
+008D:  RETURN
+....................  
+.................... #use rs232(baud=9600,parity=N,xmit=PIN_C6,rcv=PIN_C7,bits=8) 
+....................  
+.................... //Pin Define =================== 
+.................... #define EnableXY          PIN_D0 
+.................... #define Dir_X             PIN_D1 
+.................... #define Dir_Y             PIN_D2 
+.................... #define Step_X            PIN_D3 
+.................... #define Step_Y            PIN_D4 
+.................... #define Home_X            PIN_C0 
+.................... #define Home_Y            PIN_C2 
+....................  
+.................... //Value ======================== 
+.................... #define PacketLength      10 
+.................... #define StepsBackAtLimit  700 
+....................  
+.................... //Registers 
+.................... #define IsMachineReady    0x61 
+.................... #define MachineReady      0x62 
+.................... #define OpenJogMode       0x63 
+.................... #define JogModeOn         0x64 
+.................... #define JogModeOff        0x65 
+.................... #define MovingDone        0x66 
+....................  
+.................... #define GoHomeXY          0x70 
+.................... #define GoHomeX           0x71 
+.................... #define GoHomeY           0x72 
+....................  
+....................  
+.................... //============================== 
+.................... #define EmergencyStop     0x80 
+.................... #define MachineStopped    0x81 
+.................... #define ErrorLimitSwitch  0x90 
+.................... #define Home_Switch_X     0x91 
+.................... #define Limit_Switch_X    0x92 
+.................... #define Home_Switch_Y     0x93 
+.................... #define Limit_Switch_Y    0x94 
+....................  
+.................... //Function prototypes ======================== 
+.................... void goHome_X(); void goHome_Y(); 
+.................... void constspeed_X(int16 conststep); 
+.................... void constspeed_Y(int16 conststep); 
+.................... void constspeed_XY(int16 conststepX, int16 conststepY); 
+.................... void dly_100us(int8 n); 
+....................  
+....................  
+.................... //Global variables 
+.................... //int8  rs232_buffer; //Store the return data from getc()  
+.................... int8  dataIn[PacketLength]; //Store the incoming data from COM port  
+.................... int16 manualModeLocation; 
+.................... int16 autoModeLocation; 
+.................... //int1  currentMachineMode; 
+.................... //int8  axisDelay; 
+....................  
+....................  
+....................  
+.................... void main() 
+*
+012E:  MOVF   03,W
+012F:  ANDLW  1F
+0130:  MOVWF  03
+0131:  BSF    03.5
+0132:  BSF    03.6
+0133:  BSF    07.3
+0134:  MOVLW  08
+0135:  BCF    03.6
+0136:  MOVWF  19
+0137:  MOVLW  02
+0138:  MOVWF  1A
+0139:  MOVLW  A6
+013A:  MOVWF  18
+013B:  MOVLW  90
+013C:  BCF    03.5
+013D:  MOVWF  18
+013E:  MOVLW  FF
+013F:  MOVWF  2E
+0140:  BSF    03.5
+0141:  BSF    03.6
+0142:  MOVF   09,W
+0143:  ANDLW  C0
+0144:  MOVWF  09
+0145:  BCF    03.6
+0146:  BCF    1F.4
+0147:  BCF    1F.5
+0148:  MOVLW  00
+0149:  BSF    03.6
+014A:  MOVWF  08
+014B:  BCF    03.5
+014C:  CLRF   07
+014D:  CLRF   08
+014E:  CLRF   09
+014F:  BCF    03.7
+.................... { 
+.................... //===========================================================================// 
+.................... //Setup 
+....................    int16  axisStep; 
+....................    int8   axisSelect, config; 
+....................    int1   axisDir; 
+....................    int8   homeSelect; 
+....................  
+....................    output_c(0xFF); 
+0150:  MOVLW  00
+0151:  BCF    03.6
+0152:  MOVWF  2E
+0153:  BSF    03.5
+0154:  CLRF   07
+0155:  MOVLW  FF
+0156:  BCF    03.5
+0157:  MOVWF  07
+....................     
+....................    //set_tris_b(0x01); 
+....................    set_tris_d(0x00);       //Set all out pin 
+0158:  MOVLW  00
+0159:  BSF    03.5
+015A:  MOVWF  08
+....................    set_tris_c(0x00); 
+015B:  MOVWF  07
+015C:  BCF    03.5
+015D:  MOVWF  2E
+....................    //Starup 
+....................    printf("MACHINE_TESTER_V1.0 \r\n"); 
+015E:  MOVLW  04
+015F:  BSF    03.6
+0160:  MOVWF  0D
+0161:  MOVLW  00
+0162:  MOVWF  0F
+0163:  BCF    03.6
+0164:  CALL   022
+....................    delay_ms(100); 
+0165:  MOVLW  64
+0166:  MOVWF  35
+0167:  CALL   07A
+....................  
+....................    
+....................    //Setup lable 
+....................    manualModeLocation = label_address(MANUAL_MODE); 
+0168:  MOVLW  01
+0169:  MOVWF  7A
+016A:  MOVLW  88
+016B:  MOVWF  2A
+016C:  MOVF   7A,W
+016D:  MOVWF  2B
+....................    autoModeLocation = label_address(AUTO_MODE); 
+016E:  MOVLW  02
+016F:  MOVWF  7A
+0170:  MOVLW  05
+0171:  MOVWF  2C
+0172:  MOVF   7A,W
+0173:  MOVWF  2D
+....................     
+....................    //enable_interrupts(INT_RDA); 
+....................    //enable_interrupts(GLOBAL); 
+....................    disable_interrupts(GLOBAL); 
+0174:  BCF    0B.6
+0175:  BCF    0B.7
+0176:  BTFSC  0B.7
+0177:  GOTO   175
+....................  
+....................  
+.................... //===========================================================================// 
+.................... //Wait for start coment 
+....................  
+....................    output_bit(EnableXY, 0);   //Enable 2 motor 
+0178:  BCF    08.0
+0179:  BSF    03.5
+017A:  BCF    08.0
+....................    goHome_X(); 
+017B:  BCF    03.5
+017C:  CALL   08E
+....................    goHome_Y(); 
+017D:  CALL   0B2
+....................    while(getc() != IsMachineReady);  
+017E:  BTFSS  0C.5
+017F:  GOTO   17E
+0180:  MOVF   1A,W
+0181:  SUBLW  61
+0182:  BTFSS  03.2
+0183:  GOTO   17E
+....................    putc(MachineReady); 
+0184:  MOVLW  62
+0185:  BTFSS  0C.4
+0186:  GOTO   185
+0187:  MOVWF  19
+.................... //===========================================================================// 
+....................  
+.................... MANUAL_MODE: 
+.................... //currentMachineMode = 0; 
+....................     
+....................    dataIn[0] = getc(); // Axis Configuration Byte 
+0188:  BTFSS  0C.5
+0189:  GOTO   188
+018A:  MOVF   1A,W
+018B:  MOVWF  20
+....................    dataIn[1] = getc(); // Axis Step Low Byte 
+018C:  BTFSS  0C.5
+018D:  GOTO   18C
+018E:  MOVF   1A,W
+018F:  MOVWF  21
+....................    dataIn[2] = getc(); // Axis Step High Byte 
+0190:  BTFSS  0C.5
+0191:  GOTO   190
+0192:  MOVF   1A,W
+0193:  MOVWF  22
+....................  
+....................    bit_clear(*0x0B,1); // Clear INTF Flag of INTCONreg 
+0194:  BCF    0B.1
+....................    //if dataIn bit7=0 exit jog mode 
+....................     
+....................    if((dataIn[0] == 0x80)) 
+0195:  MOVF   20,W
+0196:  SUBLW  80
+0197:  BTFSS  03.2
+0198:  GOTO   1A4
+....................    { 
+....................       printf("AUTO_INSPECTION\r\n"); 
+0199:  MOVLW  10
+019A:  BSF    03.6
+019B:  MOVWF  0D
+019C:  MOVLW  00
+019D:  MOVWF  0F
+019E:  BCF    03.6
+019F:  CALL   022
+....................       goto_address(autoModeLocation); 
+01A0:  MOVF   2D,W
+01A1:  MOVWF  0A
+01A2:  MOVF   2C,W
+01A3:  MOVWF  02
+....................    } 
+....................    //else Process data input 
+....................    config = dataIn[0]; 
+01A4:  MOVF   20,W
+01A5:  MOVWF  32
+....................    axisStep = make16(dataIn[1], dataIn[2]); 
+01A6:  MOVF   21,W
+01A7:  MOVWF  30
+01A8:  MOVF   22,W
+01A9:  MOVWF  2F
+....................     
+....................    homeSelect = config & 0x03; 
+01AA:  MOVF   32,W
+01AB:  ANDLW  03
+01AC:  MOVWF  34
+....................     
+....................    //Construction control bit 
+....................    axisSelect = (config & 0x60) >> 5; //01=X, 10=Y 
+01AD:  MOVF   32,W
+01AE:  ANDLW  60
+01AF:  MOVWF  77
+01B0:  SWAPF  77,W
+01B1:  MOVWF  31
+01B2:  RRF    31,F
+01B3:  MOVLW  07
+01B4:  ANDWF  31,F
+....................    axisDir = (config & 0x10) >>4; 
+01B5:  MOVF   32,W
+01B6:  ANDLW  10
+01B7:  MOVWF  77
+01B8:  SWAPF  77,F
+01B9:  MOVLW  0F
+01BA:  ANDWF  77,F
+01BB:  BCF    33.0
+01BC:  BTFSC  77.0
+01BD:  BSF    33.0
+....................     
+....................    // Before movement, enable rs232 and RB0 interrupt for 
+....................    // Emergency Stop and Axis Limit Switches. 
+....................    //ext_int_edge(H_TO_L); 
+....................    //enable_interrupts(INT_EXT); 
+....................    //enable_interrupts(INT_RDA); 
+....................    //enable_interrupts(GLOBAL); 
+....................    //Enable all drivers 
+....................    output_bit(EnableXY, 0);   //Enable 2 motor 
+01BE:  BCF    08.0
+01BF:  BSF    03.5
+01C0:  BCF    08.0
+....................    //Do the axis movement according to given parameters 
+....................    switch (axisSelect) { 
+01C1:  BCF    03.5
+01C2:  MOVF   31,W
+01C3:  BTFSC  03.2
+01C4:  GOTO   1CC
+01C5:  XORLW  01
+01C6:  BTFSC  03.2
+01C7:  GOTO   1E9
+01C8:  XORLW  03
+01C9:  BTFSC  03.2
+01CA:  GOTO   1F7
+01CB:  GOTO   204
+....................    case 0: //0=00b -> Other function 
+....................       switch (homeSelect) { 
+01CC:  MOVF   34,W
+01CD:  XORLW  01
+01CE:  BTFSC  03.2
+01CF:  GOTO   1D7
+01D0:  XORLW  03
+01D1:  BTFSC  03.2
+01D2:  GOTO   1DD
+01D3:  XORLW  01
+01D4:  BTFSC  03.2
+01D5:  GOTO   1E3
+01D6:  GOTO   1E9
+....................          case 1: 
+....................          goHome_X(); putc(MovingDone); 
+01D7:  CALL   08E
+01D8:  MOVLW  66
+01D9:  BTFSS  0C.4
+01DA:  GOTO   1D9
+01DB:  MOVWF  19
+....................          break; 
+01DC:  GOTO   1E9
+....................          case 2: 
+....................          goHome_Y(); putc(MovingDone); 
+01DD:  CALL   0B2
+01DE:  MOVLW  66
+01DF:  BTFSS  0C.4
+01E0:  GOTO   1DF
+01E1:  MOVWF  19
+....................          break; 
+01E2:  GOTO   1E9
+....................          case 3: 
+....................          goHome_X(); goHome_Y(); putc(MovingDone); 
+01E3:  CALL   08E
+01E4:  CALL   0B2
+01E5:  MOVLW  66
+01E6:  BTFSS  0C.4
+01E7:  GOTO   1E6
+01E8:  MOVWF  19
+....................          break; 
+....................       } 
+....................    case 1: // 1=01b -> X-Axis 
+....................       //puts("X"); 
+....................       output_bit(Dir_X, axisDir); 
+01E9:  BTFSC  33.0
+01EA:  GOTO   1ED
+01EB:  BCF    08.1
+01EC:  GOTO   1EE
+01ED:  BSF    08.1
+01EE:  BSF    03.5
+01EF:  BCF    08.1
+....................       //constspeed(axisStep,0); // (Stepnumber, axis) 
+....................       constspeed_X(axisStep); // (Stepnumber, axis) 
+01F0:  BCF    03.5
+01F1:  MOVF   30,W
+01F2:  MOVWF  36
+01F3:  MOVF   2F,W
+01F4:  MOVWF  35
+01F5:  CALL   0D6
+....................    break; 
+01F6:  GOTO   204
+....................    case 2: // 2=10b -> Y-Axis 
+....................       //puts("Y"); 
+....................       output_bit(Dir_Y, axisDir); 
+01F7:  BTFSC  33.0
+01F8:  GOTO   1FB
+01F9:  BCF    08.2
+01FA:  GOTO   1FC
+01FB:  BSF    08.2
+01FC:  BSF    03.5
+01FD:  BCF    08.2
+....................       //constspeed(axisStep,1); // (Stepnumber, axis) 
+....................       constspeed_Y(axisStep); // (Stepnumber, axis) 
+01FE:  BCF    03.5
+01FF:  MOVF   30,W
+0200:  MOVWF  36
+0201:  MOVF   2F,W
+0202:  MOVWF  35
+0203:  CALL   102
+....................    break; 
+....................    } 
+....................    goto MANUAL_MODE; 
+0204:  GOTO   188
+.................... //===========================================================================// 
+....................  
+.................... AUTO_MODE: 
+....................  
+....................    dataIn[0] = getc(); // Axis Configuration Byte 
+0205:  BTFSS  0C.5
+0206:  GOTO   205
+0207:  MOVF   1A,W
+0208:  MOVWF  20
+....................    dataIn[1] = getc(); // Axis Step Low Byte 
+0209:  BTFSS  0C.5
+020A:  GOTO   209
+020B:  MOVF   1A,W
+020C:  MOVWF  21
+....................    dataIn[2] = getc(); // Axis Step High Byte 
+020D:  BTFSS  0C.5
+020E:  GOTO   20D
+020F:  MOVF   1A,W
+0210:  MOVWF  22
+....................  
+....................    bit_clear(*0x0B,1); // Clear INTF Flag of INTCONreg 
+0211:  BCF    0B.1
+....................    //if dataIn bit7=0 exit jog mode 
+....................    if(dataIn[0] == 0 ) 
+0212:  MOVF   20,F
+0213:  BTFSS  03.2
+0214:  GOTO   21D
+....................    { 
+....................       printf("STOP_INSPECTION\r\n"); 
+0215:  MOVLW  19
+0216:  BSF    03.6
+0217:  MOVWF  0D
+0218:  MOVLW  00
+0219:  MOVWF  0F
+021A:  BCF    03.6
+021B:  CALL   022
+....................       goto MANUAL_MODE; 
+021C:  GOTO   188
+....................    } 
+....................    //else make the jog movement 
+....................    config = dataIn[0]; 
+021D:  MOVF   20,W
+021E:  MOVWF  32
+....................    axisStep = make16(dataIn[1], dataIn[2]); 
+021F:  MOVF   21,W
+0220:  MOVWF  30
+0221:  MOVF   22,W
+0222:  MOVWF  2F
+....................     
+....................    //Construction control bit 
+....................    axisSelect = (config & 0x60) >> 5; //01=X, 10=Y 
+0223:  MOVF   32,W
+0224:  ANDLW  60
+0225:  MOVWF  77
+0226:  SWAPF  77,W
+0227:  MOVWF  31
+0228:  RRF    31,F
+0229:  MOVLW  07
+022A:  ANDWF  31,F
+....................    axisDir = (config & 0x10) >>4; 
+022B:  MOVF   32,W
+022C:  ANDLW  10
+022D:  MOVWF  77
+022E:  SWAPF  77,F
+022F:  MOVLW  0F
+0230:  ANDWF  77,F
+0231:  BCF    33.0
+0232:  BTFSC  77.0
+0233:  BSF    33.0
+....................     
+....................    // Before movement, enable rs232 and RB0 interrupt for 
+....................    // Emergency Stop and Axis Limit Switches. 
+....................    //ext_int_edge(H_TO_L); 
+....................    //enable_interrupts(INT_EXT); 
+....................    //enable_interrupts(INT_RDA); 
+....................    //enable_interrupts(GLOBAL); 
+....................    //Enable all drivers 
+....................     
+....................    output_bit(EnableXY, 0);   //Enable 2 motor 
+0234:  BCF    08.0
+0235:  BSF    03.5
+0236:  BCF    08.0
+....................    //delay_ms(50); 
+....................    //Do the axis movement according to given parameters 
+....................    switch (axisSelect) 
+0237:  BCF    03.5
+0238:  MOVF   31,W
+0239:  BTFSC  03.2
+023A:  GOTO   242
+023B:  XORLW  01
+023C:  BTFSC  03.2
+023D:  GOTO   266
+023E:  XORLW  03
+023F:  BTFSC  03.2
+0240:  GOTO   274
+0241:  GOTO   281
+....................    { 
+....................       case 0: //0=00b -> Other function 
+....................          config = config && 0x0F; 
+0242:  MOVF   32,F
+0243:  BTFSS  03.2
+0244:  GOTO   247
+0245:  MOVLW  00
+0246:  GOTO   248
+0247:  MOVLW  01
+0248:  MOVWF  32
+....................          switch (config) { 
+0249:  MOVF   32,W
+024A:  XORLW  01
+024B:  BTFSC  03.2
+024C:  GOTO   254
+024D:  XORLW  03
+024E:  BTFSC  03.2
+024F:  GOTO   25A
+0250:  XORLW  01
+0251:  BTFSC  03.2
+0252:  GOTO   260
+0253:  GOTO   266
+....................             case 1: 
+....................             goHome_X(); putc(MovingDone); 
+0254:  CALL   08E
+0255:  MOVLW  66
+0256:  BTFSS  0C.4
+0257:  GOTO   256
+0258:  MOVWF  19
+....................             break; 
+0259:  GOTO   266
+....................             case 2: 
+....................             goHome_Y(); putc(MovingDone); 
+025A:  CALL   0B2
+025B:  MOVLW  66
+025C:  BTFSS  0C.4
+025D:  GOTO   25C
+025E:  MOVWF  19
+....................             break; 
+025F:  GOTO   266
+....................             case 3: 
+....................             goHome_X(); goHome_Y(); putc(MovingDone); 
+0260:  CALL   08E
+0261:  CALL   0B2
+0262:  MOVLW  66
+0263:  BTFSS  0C.4
+0264:  GOTO   263
+0265:  MOVWF  19
+....................             break; 
+....................          }    
+....................       case 1: // 1=01b -> X-Axis 
+....................          //puts("X"); 
+....................          output_bit(Dir_X, axisDir); 
+0266:  BTFSC  33.0
+0267:  GOTO   26A
+0268:  BCF    08.1
+0269:  GOTO   26B
+026A:  BSF    08.1
+026B:  BSF    03.5
+026C:  BCF    08.1
+....................          //constspeed(axisStep,0); // (Stepnumber, axis) 
+....................          constspeed_X(axisStep); // (Stepnumber, axis) 
+026D:  BCF    03.5
+026E:  MOVF   30,W
+026F:  MOVWF  36
+0270:  MOVF   2F,W
+0271:  MOVWF  35
+0272:  CALL   0D6
+....................       break; 
+0273:  GOTO   281
+....................       case 2: // 2=10b -> Y-Axis 
+....................          //puts("Y"); 
+....................          output_bit(Dir_Y, axisDir); 
+0274:  BTFSC  33.0
+0275:  GOTO   278
+0276:  BCF    08.2
+0277:  GOTO   279
+0278:  BSF    08.2
+0279:  BSF    03.5
+027A:  BCF    08.2
+....................          //constspeed(axisStep,1); // (Stepnumber, axis) 
+....................          constspeed_Y(axisStep); // (Stepnumber, axis) 
+027B:  BCF    03.5
+027C:  MOVF   30,W
+027D:  MOVWF  36
+027E:  MOVF   2F,W
+027F:  MOVWF  35
+0280:  CALL   102
+....................       break; 
+....................       } 
+....................       delay_ms(250); 
+0281:  MOVLW  FA
+0282:  MOVWF  35
+0283:  CALL   07A
+....................       //Movement complete 
+....................       putc(MovingDone); 
+0284:  MOVLW  66
+0285:  BTFSS  0C.4
+0286:  GOTO   285
+0287:  MOVWF  19
+....................       //disable_interrupts(GLOBAL); 
+....................       goto AUTO_MODE; 
+0288:  GOTO   205
+....................  
+.................... } // End of Main() 
+.................... //===========================================================================// 
+0289:  SLEEP
+....................  
+.................... void constspeed_X(int16 conststep) 
+.................... { 
+....................    int16 i; 
+....................    for (i=0; i<conststep; i++) 
+*
+00D6:  CLRF   38
+00D7:  CLRF   37
+00D8:  MOVF   38,W
+00D9:  SUBWF  36,W
+00DA:  BTFSS  03.0
+00DB:  GOTO   0F8
+00DC:  BTFSS  03.2
+00DD:  GOTO   0E2
+00DE:  MOVF   35,W
+00DF:  SUBWF  37,W
+00E0:  BTFSC  03.0
+00E1:  GOTO   0F8
+....................    { 
+....................       output_bit(Step_X,1); 
+00E2:  BSF    08.3
+00E3:  BSF    03.5
+00E4:  BCF    08.3
+....................       delay_us(30); 
+00E5:  MOVLW  31
+00E6:  MOVWF  77
+00E7:  DECFSZ 77,F
+00E8:  GOTO   0E7
+00E9:  GOTO   0EA
+....................       output_bit(Step_X,0); 
+00EA:  BCF    03.5
+00EB:  BCF    08.3
+00EC:  BSF    03.5
+00ED:  BCF    08.3
+....................       delay_us(30); 
+00EE:  MOVLW  31
+00EF:  MOVWF  77
+00F0:  DECFSZ 77,F
+00F1:  GOTO   0F0
+00F2:  GOTO   0F3
+00F3:  BCF    03.5
+00F4:  INCF   37,F
+00F5:  BTFSC  03.2
+00F6:  INCF   38,F
+00F7:  GOTO   0D8
+....................    } 
+....................    output_bit(Step_X,1);   // Last step 
+00F8:  BSF    08.3
+00F9:  BSF    03.5
+00FA:  BCF    08.3
+....................    delay_us(100); 
+00FB:  MOVLW  A6
+00FC:  MOVWF  77
+00FD:  DECFSZ 77,F
+00FE:  GOTO   0FD
+00FF:  NOP
+0100:  BCF    03.5
+0101:  RETURN
+.................... } // End of constspeed() 
+....................  
+.................... void constspeed_Y(int16 conststep) 
+.................... { 
+....................    int16 i; 
+....................    for (i=0; i<conststep; i++) 
+0102:  CLRF   38
+0103:  CLRF   37
+0104:  MOVF   38,W
+0105:  SUBWF  36,W
+0106:  BTFSS  03.0
+0107:  GOTO   124
+0108:  BTFSS  03.2
+0109:  GOTO   10E
+010A:  MOVF   35,W
+010B:  SUBWF  37,W
+010C:  BTFSC  03.0
+010D:  GOTO   124
+....................    { 
+....................       output_bit(Step_Y,1); 
+010E:  BSF    08.4
+010F:  BSF    03.5
+0110:  BCF    08.4
+....................       delay_us(30); 
+0111:  MOVLW  31
+0112:  MOVWF  77
+0113:  DECFSZ 77,F
+0114:  GOTO   113
+0115:  GOTO   116
+....................       output_bit(Step_Y,0); 
+0116:  BCF    03.5
+0117:  BCF    08.4
+0118:  BSF    03.5
+0119:  BCF    08.4
+....................       delay_us(30); 
+011A:  MOVLW  31
+011B:  MOVWF  77
+011C:  DECFSZ 77,F
+011D:  GOTO   11C
+011E:  GOTO   11F
+011F:  BCF    03.5
+0120:  INCF   37,F
+0121:  BTFSC  03.2
+0122:  INCF   38,F
+0123:  GOTO   104
+....................    } 
+....................    output_bit(Step_Y,1);   // Last step 
+0124:  BSF    08.4
+0125:  BSF    03.5
+0126:  BCF    08.4
+....................    delay_us(100); 
+0127:  MOVLW  A6
+0128:  MOVWF  77
+0129:  DECFSZ 77,F
+012A:  GOTO   129
+012B:  NOP
+012C:  BCF    03.5
+012D:  RETURN
+.................... } // End of constspeed() 
+....................  
+.................... void goHome_X() 
+.................... { 
+....................    int16 i; 
+....................    output_bit(Dir_X, 0); 
+*
+008E:  BCF    08.1
+008F:  BSF    03.5
+0090:  BCF    08.1
+....................     
+....................    while (input(Home_X)) { 
+0091:  BCF    03.5
+0092:  BSF    2E.0
+0093:  MOVF   2E,W
+0094:  BSF    03.5
+0095:  MOVWF  07
+0096:  BCF    03.5
+0097:  BTFSS  07.0
+0098:  GOTO   0AC
+....................       output_bit(Step_X,1); 
+0099:  BSF    08.3
+009A:  BSF    03.5
+009B:  BCF    08.3
+....................       delay_us(30); 
+009C:  MOVLW  31
+009D:  MOVWF  77
+009E:  DECFSZ 77,F
+009F:  GOTO   09E
+00A0:  GOTO   0A1
+....................       output_bit(Step_X,0); 
+00A1:  BCF    03.5
+00A2:  BCF    08.3
+00A3:  BSF    03.5
+00A4:  BCF    08.3
+....................       delay_us(30); 
+00A5:  MOVLW  31
+00A6:  MOVWF  77
+00A7:  DECFSZ 77,F
+00A8:  GOTO   0A7
+00A9:  GOTO   0AA
+00AA:  GOTO   091
+00AB:  BCF    03.5
+....................    } 
+....................    delay_us(100); 
+00AC:  MOVLW  A6
+00AD:  MOVWF  77
+00AE:  DECFSZ 77,F
+00AF:  GOTO   0AE
+00B0:  NOP
+00B1:  RETURN
+....................    //Run out 1mm 
+....................    //output_bit(Dir_X, 1); 
+....................    //for (i=0; i<50; i++) { 
+....................    //   output_bit(Step_X,1); 
+....................    //   delay_us(500); 
+....................    //   output_bit(Step_X,0); 
+....................    //   delay_us(500); 
+....................    //} 
+....................    //delay_us(100); 
+....................    //printf("HOMEX \r\n"); 
+.................... } // End of Home_X() 
+....................  
+.................... void goHome_Y() 
+.................... { 
+....................    int16 i; 
+....................    output_bit(Dir_Y, 0); 
+00B2:  BCF    08.2
+00B3:  BSF    03.5
+00B4:  BCF    08.2
+....................    while (input(Home_Y)) { 
+00B5:  BCF    03.5
+00B6:  BSF    2E.2
+00B7:  MOVF   2E,W
+00B8:  BSF    03.5
+00B9:  MOVWF  07
+00BA:  BCF    03.5
+00BB:  BTFSS  07.2
+00BC:  GOTO   0D0
+....................       output_bit(Step_Y,1); 
+00BD:  BSF    08.4
+00BE:  BSF    03.5
+00BF:  BCF    08.4
+....................       delay_us(30); 
+00C0:  MOVLW  31
+00C1:  MOVWF  77
+00C2:  DECFSZ 77,F
+00C3:  GOTO   0C2
+00C4:  GOTO   0C5
+....................       output_bit(Step_Y,0); 
+00C5:  BCF    03.5
+00C6:  BCF    08.4
+00C7:  BSF    03.5
+00C8:  BCF    08.4
+....................       delay_us(30); 
+00C9:  MOVLW  31
+00CA:  MOVWF  77
+00CB:  DECFSZ 77,F
+00CC:  GOTO   0CB
+00CD:  GOTO   0CE
+00CE:  GOTO   0B5
+00CF:  BCF    03.5
+....................    } 
+....................    delay_us(100); 
+00D0:  MOVLW  A6
+00D1:  MOVWF  77
+00D2:  DECFSZ 77,F
+00D3:  GOTO   0D2
+00D4:  NOP
+00D5:  RETURN
+....................    //Run out 1mm 
+....................    //output_bit(Dir_Y, 1); 
+....................    //for (i=0; i<50; i++) { 
+....................    //   output_bit(Step_Y,1); 
+....................    //   delay_us(50); 
+....................    //   output_bit(Step_Y,0); 
+....................    //   delay_us(50); 
+....................    //} 
+....................    //delay_us(100); 
+....................    //printf("HOMEY \r\n"); 
+.................... } // End of Home_Y() 
+....................  
+
+Configuration Fuses:
+   Word  1: 2CE2   HS NOWDT PUT MCLR NOPROTECT NOCPD NOBROWNOUT IESO FCMEN NOLVP NODEBUG
+   Word  2: 3FFF   BORV40 NOWRT

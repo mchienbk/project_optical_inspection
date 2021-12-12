@@ -1,0 +1,4 @@
+C:\Users\minhc\Desktop\CameraTester\bin\x64\Debug\CameraTester.exe.config
+C:\Users\minhc\Desktop\CameraTester\obj\x64\Debug\Desktop.MainForm.resources
+C:\Users\minhc\Desktop\CameraTester\obj\x64\Debug\CameraTester.Properties.Resources.resources
+C:\Users\minhc\Desktop\CameraTester\obj\x64\Debug\CameraTester.csproj.GenerateResource.Cache
